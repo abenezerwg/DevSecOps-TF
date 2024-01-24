@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet"  href="./css/bg.css">
+    <link rel="stylesheet"  href="./css/form-container.css">
+
+</head>
+<body>
+  
+<div class="background-container">
+    <img src="./img/anonymous_background_image.jpg" alt="">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="clouds"></div>
+  </div>
+
+  <div class="form-container">
+
+    <figure class="text-center">
+      <blockquote class="blockquote">
+        <p style="color: white;">Welcome to the Anonymous Chat App</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Chat annonymously 
+      </figcaption>
+    </figure>
+    
+    <form action="/creategroup" method="post">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control"  name="groupName" placeholder="Group Title" aria-label="GroupName" aria-describedby="basic-addon1" required> 
+    </div>
+    <input type="text" class="form-control"  name="description" placeholder="Description" aria-label="GroupName" aria-describedby="basic-addon1" required>
+      <button type="submit" class="btn" style="background-color: #1D9BF0; color: #fff; ">Continue</button>
+    </form>
+  </div>
+</body>
+</html>

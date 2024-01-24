@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet"  href="./css/bg.css">
+  <link rel="stylesheet"  href="./css/form-container.css">
+  <script>
+    function getCookieValue(cookieName) {
+          const name = cookieName + "=";
+          const decodedCookie = decodeURIComponent(document.cookie);
+          const cookieArray = decodedCookie.split(';');
+
+          for (let i = 0; i < cookieArray.length; i++) {
+              let cookie = cookieArray[i].trim();
+              if (cookie.indexOf(name) === 0) {
+                  return cookie.substring(name.length);
+              }
+          }
+
+          return "";
+    }
+
+    function checkUserName(){
+           if(getCookieValue("exist") == 1){
+              $("#abc").show();
+           }
+           else{
+              $("#abc").hide();
+           }
+    }
+
+</script>
+ 
+  <title>Anonymous Chat App</title>
+</head>
+
+<body onload="checkUserName()">
+  <div class="background-container">
+    <img src="./img/anonymous_background_image.jpg" alt="">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+   
+  </div>
+
+  <div class="form-container">
+
+    <figure class="text-center">
+      <blockquote class="blockquote">
+        <p style="color: white;">Welcome to the Anonymous Chat App</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Chat anonymously 
+      </figcaption>
+    </figure>
+    
+    <form action="/welcome" method="post">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username" aria-label="Username" required aria-describedby="basic-addon1">
+      </div>
+      <button type="submit" class="btn" style="background-color: #1D9BF0; color: #fff; ">Continue</button>
+    </form>
+    <label id="abc" style="color: red;">The username is taken. Please try different!</label>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
